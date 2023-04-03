@@ -8,7 +8,9 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float runinngSpeed = 10f;
     [SerializeField] private float jumpHeigth = 80f;
     [SerializeField] private int heals = 1;
-    
+    private const float NUMBER_DELTA = 1.2f;
+
+    public float RuningSpeed{ get => runinngSpeed; set => runinngSpeed *= value * NUMBER_DELTA; }
     public float GetRunningSpeed(){
         return runinngSpeed;
     }
@@ -18,7 +20,7 @@ public class PlayerStats : MonoBehaviour
     }
 
     public void TakeRunningSpeed(){
-        runinngSpeed = runinngSpeed * 1.2f;
+        runinngSpeed = runinngSpeed * NUMBER_DELTA;
     }
     
 }

@@ -41,7 +41,7 @@ public class FloorGenerator : MonoBehaviour
 
 
 
-    private void SpawnPlatforms(int indexPlatform)
+    private void SpawnPlatforms(int indexPlatform)//переделать через пул
     {
         GameObject nextPlatf = Instantiate(platfPrefabs[indexPlatform], transform.forward * spawnPoint, transform.rotation);
         existingPlatf.Add(nextPlatf);

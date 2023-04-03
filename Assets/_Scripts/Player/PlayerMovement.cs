@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControl : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float gravitation = -9.0f;
     private PlayerStats playerStats;
@@ -26,12 +26,12 @@ public class PlayerControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        MovePlayer();
+        Move();
     }
 
-    private void MovePlayer()
+    private void Move()
     {
-        movement.z = playerStats.GetRunningSpeed();
+        movement.z = playerStats.RuningSpeed;
         movement.y += gravitation*Time.deltaTime;
         characterController.Move(movement * Time.deltaTime);
     }
